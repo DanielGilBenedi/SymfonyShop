@@ -1,0 +1,266 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DentroProductoController!{% endblock %}
+
+{% block body %}
+<style>
+
+
+
+.contenedorPrincipal {
+    width: 80%;
+    padding: 20px 15px;
+    margin: 10px auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 20px;
+}
+
+
+
+.gallery {
+    width: 40%;
+    float: left;
+    
+}
+
+.gallery .master-img {
+    margin-top:4%;
+    height: 60%;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.gallery .master-img img{
+    width: 100%;
+    height: 350px;
+}
+
+.gallery .thmubnails {
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+
+.gallery .thmubnails img {
+    float: left;
+    height: 100px;
+    background: #fff;
+    border: 2px solid #ffc544;
+    padding: 3px;
+    margin: 2%;
+    width: 26%;
+    cursor: pointer;
+}
+
+.gallery .thmubnails img:last-of-type {
+    margin-right: 0;
+}
+
+.gallery .thmubnails i {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    right: 0px;
+    top: 36px;
+    color: #666;
+}
+/* End Gallery */
+
+/* Start Product Info */
+
+.product-info {
+    width: 50%;
+    padding: 10px;
+    background:#fff;
+    color: #929191;
+    position: relative;
+    float: right;
+}
+
+.product-info .fa-remove {
+    display: block;
+    background: #eee;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.product-info .heading {
+    font-size: 35px;
+    font-weight: bold;
+    color: #575757;
+    text-transform: uppercase;
+}
+
+.product-info .product-type {
+    display: block;
+    margin:30px 0 20px 0;
+}
+
+.product-info .rate {
+    margin:30px 0 20px 0;
+    position: relative;
+}
+
+.product-info .rate .fa-star {
+    color: #ffb40a;
+}
+
+.product-info .rate span {
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+}
+
+.product-info .desc p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.product-info .buy-info {
+    position: relative;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 5px;
+}
+
+.product-info .buy-info span {
+    margin: 5px 0;
+    color: #8e8d8d;
+}
+
+.product-info .buy-info .quantity {
+    display: inline-block;
+}
+
+.product-info .buy-info .quantity span {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    margin-left: 20px;
+}
+
+.product-info .buy-info .price {
+    display: block;
+}
+
+.product-info .buy-info button {
+    background: -webkit-linear-gradient(to right,#13fc34,#5dfe54);
+    background: linear-gradient(to right,#13fc34,#5dfe54);
+    color: #fff;
+    width: 80px;
+    padding: 5px;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 90px;
+    cursor: pointer;
+    border-radius: 25px;
+    outline: none;
+    -webkit-box-shadow: 3px 3px 10px #13fc34;
+    -moz-box-shadow: 3px 3px 10px #13fc34;
+    -o-box-shadow: 3px 3px 10px #13fc34;
+    box-shadow: 3px 3px 10px #13fc34;
+}
+
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot:nth-child(2){
+    background: green;
+}
+.dot:nth-child(3){
+    background: blue;
+}
+.dot:nth-child(4){
+    background: red;
+}
+.dot:nth-child(5){
+    background: black;
+}
+/* End Product Info */
+
+</style>
+
+    <div class="contenedorPrincipal">
+        <!-- Start SlideShow -->
+        <div class="gallery">
+            <div class="master-img">
+                <img src="/images/zapato1.jpg"  id="principal" alt="">
+            </div>
+            <div class="thmubnails">
+                <img src="/images/zapato2.png" id="secundaria" alt="">
+                <img src="/images/zapato1.jpg" id="secundaria"  alt="">
+                <img src="/images/zapato2.png" id="secundaria"  alt="">
+           
+            </div>
+        </div>
+        <!-- End SlideShow -->  
+        <!-- Start Product Description -->
+        <div class="product-info">
+            
+            <h2 class="heading">Nike 657</h2>
+                         
+            
+            <div class="desc">
+                <div class="size">
+                            <h3>Size :</h3>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                </div>
+                <div class="color">
+                    <h3>Color :</h3>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <div class="buy-info">
+                <span class="price">Price: $199.00</span>
+                <button>Buy</button>
+            </div>
+            
+        </div>
+      
+    </div>
+
+
+<script>
+
+
+var i = document.getElementById('secundaria');
+
+i.addEventListener("click", function(){
+    
+     var j = document.getElementById('principal');
+    j.setAttribute('src', i.getAttribute('src'));
+
+
+});
+
+</script>
+{% endblock %}

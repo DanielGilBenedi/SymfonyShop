@@ -1,0 +1,153 @@
+<style>
+
+.header .navbar {
+  background-color: transparent !important;
+}
+nav{
+  z-index: 1000;
+}
+a{
+  color: #111;
+  font-weight: bold;
+
+}
+.liTypes{
+  padding-left: 50px;
+  color: #fff;
+
+}
+
+.dropdown-menu > .dropdown-toggle:active {
+    
+    pointer-events: none;
+}
+
+ .navbar-nav li:hover .dropdown-menu {
+        display: block;
+    } 
+  #dropdown1{
+    margin-left:19%;
+    margin-top: -20px;
+  }
+
+   #dropdown2{
+    margin-left:31.5%;
+    margin-top: -20px;
+  }
+
+   #dropdown3{
+    margin-left:45%;
+    margin-top: -20px;
+  }
+
+  
+</style>
+
+<nav class="navbar navbar-expand-lg ">
+
+    <a class="navbar-brand " href="/"><img src="" style="width:70px"/></a>
+
+    
+    
+    <div class="collapse navbar-collapse" id="navbarColor01">
+     
+     
+      <ul class="navbar-nav ml-auto">
+
+          <li class="liTypes nav-item dropdow">
+            <a class="nav-link " id="enHombre" href="/login">Hombre</a>
+              <div class="dropdown-menu" id="dropdown1">
+                
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              
+              </div>
+          </li>
+
+            <li class="liTypes nav-item dropdow">
+            <a class="nav-link " id="enHombre" href="/login">Mujer</a>
+              <div class="dropdown-menu" id="dropdown2">
+                
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              
+              </div>
+          </li>
+
+            <li class="liTypes nav-item dropdow">
+            <a class="nav-link " id="enHombre" href="/login">Niño</a>
+              <div class="dropdown-menu" id="dropdown3">
+                
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              
+              </div>
+          </li>
+
+          <li class="liTypes">
+            <a class="nav-link" href="/login">Novedades </a>
+          </li>
+        </ul>
+        
+      <ul class="navbar-nav ml-auto">
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            
+            <!-- si ha iniciado -->
+            <!--inicio DROPDOWN-->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg" aria-hidden="true"> </i>  {{ app.user.nombre |upper }}</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/micuenta">Mi cuenta</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/mispedidos">Mis Pedidos</a>
+                  
+                </div>
+            </li>
+        
+        <!--final DROPDOWN-->
+  
+        <li class="nav-item">
+          <a class="nav-link" href="/logout"><i class="fa fa-power-off fa-lg" aria-hidden="true"></i></a>
+        </li>
+
+        {% else %}
+            <!-- si no ha iniciado -->
+            
+            <!-- SI NO HA INICIADO SESIÓN-->
+            <li class="nav-item {{ app.request.get('_route') == 'app_login' ? 'active' }}">
+              <a class="nav-link" href="/login">Accede a tu cuenta</a>
+            </li>
+            <li class="nav-item {{ app.request.get('_route') == 'app_register' ? 'active' }}">
+              <a class="nav-link" href="/register">Regístrate</a>
+            </li>
+        {% endif %}
+
+
+        <li class="nav-item {{ app.request.get('_route') == 'carrito' ? 'active' }}">
+          <a class="nav-link" href="/carrito"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
